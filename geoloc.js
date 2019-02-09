@@ -25,11 +25,15 @@ function findMe() {
 
         output.appendChild(img);
         */
-       //"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude"," + longitude "&radius=1500&type=park&key=AIzaSyAoArmgrsG6qYabx-0lIWFlLX3HPERCj5I"
        map.setCenter({lat: latitude, lng: longitude});
        var places = document.getElementById("nearby");
-       var answer = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude+"," + longitude+ "&radius=1500&type=park&key=AIzaSyAoArmgrsG6qYabx-0lIWFlLX3HPERCj5I";
-       places.innerHTML = answer;
+       var answer = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude+"," + longitude+ "&radius=1000&type=park&opennow&key=AIzaSyAoArmgrsG6qYabx-0lIWFlLX3HPERCj5I";
+       var placeNames;
+       for(i in answer.results)
+       {
+            placeNames+= answer.results(i).name + ", ";
+       }
+       places.innerHTML = placenames;
        
     }
 
