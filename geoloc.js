@@ -1,3 +1,9 @@
+var map;
+       function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 0, lng: 0},
+          zoom: 8
+        });
 function findMe() {
     var output = document.getElementById("out");
 
@@ -17,6 +23,9 @@ function findMe() {
         img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false&key=AIzaSyCLWUexYVG_0sCUdycc6zIsNJjUGiTcz7k";
 
         output.appendChild(img);
+        */
+       map.setCenter({lat: latitude, lng: longitude});
+       
     }
 
     function error() {
