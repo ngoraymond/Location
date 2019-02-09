@@ -28,12 +28,13 @@ function findMe() {
        map.setCenter({lat: latitude, lng: longitude});
        var places = document.getElementById("nearby");
        var answer = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude+"," + longitude+ "&radius=1000&type=park&opennow&key=AIzaSyAoArmgrsG6qYabx-0lIWFlLX3HPERCj5I";
+       var objAns = JSON.parse(answer);
        var placeNames = "";
-       for(i in answer.results)
+       for(int i = 0; i<objAns.results.length; i++)
        {
-            placeNames+= answer.results[i].name + ", ";
+            placeNames+= objAns.results[i].name + ", ";
        }
-       places.innerHTML = placeNames+answer;
+       places.innerHTML = placeNames+" " +answer;
        
     }
 
