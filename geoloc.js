@@ -1,4 +1,4 @@
-function geoFindMe() {
+function findMe() {
     var output = document.getElementById("out");
 
     if (!navigator.geolocation){
