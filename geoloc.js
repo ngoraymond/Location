@@ -33,7 +33,7 @@ function findMe() {
        {
             placeNames+= answer.results(i).name + ", ";
        }
-       places.innerHTML = placenames;
+       places.innerHTML = placeNames;
        
     }
 
