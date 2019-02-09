@@ -4,6 +4,7 @@ var map;
           center: {lat: 0, lng: 0},
           zoom: 8
         });
+    }
 function findMe() {
     var output = document.getElementById("out");
 
