@@ -30,7 +30,7 @@ function findMe() {
        var answer = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude+"," + longitude+ "&radius=1000&type=park&opennow&key=AIzaSyAoArmgrsG6qYabx-0lIWFlLX3HPERCj5I";
        var objAns = JSON.parse(answer);
        var placeNames = "";
-       for(int i = 0; i<objAns.results.length; i++)
+       for(var i = 0; i<objAns.results.length; i++)
        {
             placeNames+= objAns.results[i].name + ", ";
        }
