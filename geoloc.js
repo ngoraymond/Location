@@ -25,9 +25,9 @@ function findMe() {
 
         output.appendChild(img);
         */
-       //"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude"," + longitude "&radius=1500&type=park&keyword=cruise&key=AIzaSyCLWUexYVG_0sCUdycc6zIsNJjUGiTcz7k"
+       //"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude"," + longitude "&radius=1500&type=park&key=AIzaSyCLWUexYVG_0sCUdycc6zIsNJjUGiTcz7k"
        map.setCenter({lat: latitude, lng: longitude});
-       var answer = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude+"," + longitude+ "&radius=1500&type=park&keyword=cruise&key=AIzaSyCLWUexYVG_0sCUdycc6zIsNJjUGiTcz7k";
+       var answer = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude+"," + longitude+ "&radius=1500&type=park&key=AIzaSyCLWUexYVG_0sCUdycc6zIsNJjUGiTcz7k";
        output.appendChild(answer);
        
     }
