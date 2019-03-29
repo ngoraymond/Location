@@ -29,10 +29,14 @@ function findMe() {
        var places = document.getElementById("nearby");
        var answer = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude+"," + longitude+ "&radius=1000&type=park&opennow&key=AIzaSyAoArmgrsG6qYabx-0lIWFlLX3HPERCj5I";
        var placeNames = "";
-       var xhttp = new XMLHttpRequest();
-       xhttp.open("GET",answer,true);
-       xhttp.send();
-       var obj = JSON.parse(xhttp.responseText);
+       var obj;
+       const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        fetch(proxyurl + answer) // https://cors-anywhere.herokuapp.com/https://example.com
+        .then(obj=response.json())
+       //var xhttp = new XMLHttpRequest();
+       //xhttp.open("GET",answer,true);
+       //xhttp.send();
+       //obj = JSON.parse(xhttp.responseText);
        for(var i = 0; i<obj.results.length; i++)
        {
             placeNames+= obj.results[i].name + ", ";
