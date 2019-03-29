@@ -31,8 +31,8 @@ function findMe() {
        var placeNames = "";
        var obj;
        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        fetch(proxyurl + answer) // https://cors-anywhere.herokuapp.com/https://example.com
-        .then(obj=response.json())
+        fetch(proxyurl + answer) 
+        .then(response=>{obj=JSON.parse(response.json())})
        //var xhttp = new XMLHttpRequest();
        //xhttp.open("GET",answer,true);
        //xhttp.send();
