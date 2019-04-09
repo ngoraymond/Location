@@ -46,12 +46,12 @@ function findMe() {
         dataType:'json',
         success : function(data) {              
             obj=data;
+            for(var i = 0; i<obj.results.length; i++)
+            {
+                 placeNames+= obj.results[i].name + ", ";
+            }
         },
     });
-       for(var i = 0; i<obj.results.length; i++)
-       {
-            placeNames+= obj.results[i].name + ", ";
-       }
        places.innerHTML = placeNames+" ";
        
     }
