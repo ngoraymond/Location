@@ -31,12 +31,14 @@ function findMe() {
        var placeNames = "";
        var obj;
        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+       /*
         fetch(proxyurl + answer) 
         .then(response=>{obj=JSON.parse(response.json())})
-       //var xhttp = new XMLHttpRequest();
-       //xhttp.open("GET",answer,true);
-       //xhttp.send();
-       //obj = JSON.parse(xhttp.responseText);
+        */
+       var xhttp = new XMLHttpRequest();
+       xhttp.open("GET",proxyurl+answer,true);
+       xhttp.send();
+       obj = JSON.parse(xhttp.responseText);
        for(var i = 0; i<obj.results.length; i++)
        {
             placeNames+= obj.results[i].name + ", ";
