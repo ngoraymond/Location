@@ -45,7 +45,7 @@ function findMe() {
         type : 'GET',
         dataType:'json',
         success : function(data) {   
-            alert(data);           
+            alert(JSON.stringify(data));           
             obj=data;
             for(var i = 0; i<obj.results.length; i++)
             {
