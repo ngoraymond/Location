@@ -44,7 +44,8 @@ function findMe() {
         url : proxyurl+answer,
         type : 'GET',
         dataType:'json',
-        success : function(data) {              
+        success : function(data) {   
+            alert(data);           
             obj=data;
             for(var i = 0; i<obj.results.length; i++)
             {
@@ -52,7 +53,7 @@ function findMe() {
             }
         },
     });
-       alert(placeNames);
+       //alert(placeNames);
        places.innerHTML = placeNames+" ";
        
     }
