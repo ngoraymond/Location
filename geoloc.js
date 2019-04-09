@@ -52,6 +52,7 @@ function findMe() {
             }
         },
     });
+       alert(placeNames);
        places.innerHTML = placeNames+" ";
        
     }
