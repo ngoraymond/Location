@@ -34,11 +34,20 @@ function findMe() {
        /*
         fetch(proxyurl + answer) 
         .then(response=>{obj=JSON.parse(response.json())})
-        */
        var xhttp = new XMLHttpRequest();
        xhttp.open("GET",proxyurl+answer,true);
        xhttp.send();
        obj = JSON.parse(xhttp.responseText);
+       */
+      $.ajax({
+
+        url : proxyurl+answer,
+        type : 'GET',
+        dataType:'json',
+        success : function(data) {              
+            obj=JSON.parse(data);
+        },
+    });
        for(var i = 0; i<obj.results.length; i++)
        {
             placeNames+= obj.results[i].name + ", ";
