@@ -1,3 +1,4 @@
+//@ts-check
 var map;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -7,7 +8,7 @@ function initMap() {
 }
 function findMe() {
     var output = document.getElementById("out");
-
+    var places = document.getElementById("nearby");
     if (!navigator.geolocation){
         output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
         return;
@@ -26,10 +27,9 @@ function findMe() {
         output.appendChild(img);
         */
        map.setCenter({lat: latitude, lng: longitude});
-       var places = document.getElementById("nearby");
        var answer = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude+"," + longitude+ "&radius=1000&type=park&opennow&key=AIzaSyAoArmgrsG6qYabx-0lIWFlLX3HPERCj5I";
-       var placeNames = "";
-       var obj;
+       var placeNames = "Nearby parks:";
+       //var obj;
        const proxyurl = "https://cors-anywhere.herokuapp.com/";
        /*
         fetch(proxyurl + answer) 
@@ -45,17 +45,24 @@ function findMe() {
         type : 'GET',
         dataType:'json',
         success : function(data) {   
-            alert(JSON.stringify(data));           
-            obj=data;
-            for(var i = 0; i<obj.results.length; i++)
+            //alert(JSON.stringify(data)); 
+            var k=data.results.length;
+            //console.log('success',data.results);          
+            for(var i = 0; i<k; i++)
             {
-                 placeNames+= obj.results[i].name + ", ";
+                //console.log('name',data.results[i].name);
+                placeNames+=data.results[i].name + ", ";
+                //console.log(placeNames);
             }
+            places.innerHTML=placeNames;
+        },
+        fail : function(){
+            placeNames="Error";
+            places.innerHTML=placeNames;
         },
     });
        //alert(placeNames);
-       places.innerHTML = placeNames+" ";
-       
+       //places.innerHTML = "<l1>"+placeNames+"</l1>";
     }
 
     function error() {
@@ -63,6 +70,6 @@ function findMe() {
     }
 
     output.innerHTML = "<p>Locating…</p>";
-
+    places.innerHTML = "<l1>Looking for nearby parks</l1>";
     navigator.geolocation.getCurrentPosition(success, error);
     }
