@@ -38,14 +38,6 @@ function findMe() {
        var placeNames = "Nearby parks:";
        //var obj;
        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-       /*
-        fetch(proxyurl + answer) 
-        .then(response=>{obj=JSON.parse(response.json())})
-       var xhttp = new XMLHttpRequest();
-       xhttp.open("GET",proxyurl+answer,true);
-       xhttp.send();
-       obj = JSON.parse(xhttp.responseText);
-       */
       $.ajax({
 
         url : proxyurl+answer,
