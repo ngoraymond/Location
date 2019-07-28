@@ -16,12 +16,24 @@
                   margin-left: auto;
                   margin-right: auto;
                   justify-content: center;
+                  text-align: center;
+                }
+                .finder {
+                  justify-items: center;
+                  font-size: 200%;
+                  font-weight: bold;
+                  border: 2px solid black;
+                  width: 30%;
+                  margin-top: 20px;
+                  margin: auto;
+                  padding: 10px;
+                  border-radius: 30px;
                 }
         </style>
     </head>
     <body>
             <script src="geoloc.js"> </script>
-            <p><button onclick="findMe()">Show my location</button></p>
+            <header onclick="findMe()" class="finder">Show my location</header>
             <div id="out"></div>
             <div id="nearby"></div>
             <div id="map"></div>

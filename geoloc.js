@@ -27,6 +27,7 @@ function findMe() {
         output.appendChild(img);
         */
        map.setCenter({lat: latitude, lng: longitude});
+       map.setZoom(15);
        /*
        new google.maps.Marker({
         position: {lat: latitude, lng: longitude},
