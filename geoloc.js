@@ -37,7 +37,7 @@ function findMe() {
       });
 
        var answer = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude+"," + longitude+ "&radius=2000&type=park&opennow&key=AIzaSyAoArmgrsG6qYabx-0lIWFlLX3HPERCj5I";
-       var placeNames = "Nearby parks:";
+       var placeNames = "Nearby parks: ";
        //var obj;
        const proxyurl = "https://cors-anywhere.herokuapp.com/";
       $.ajax({
@@ -81,4 +81,8 @@ function findMe() {
     output.innerHTML = "<p>Locating…</p>";
     places.innerHTML = "<l1>Looking for nearby parks</l1>";
     navigator.geolocation.getCurrentPosition(success, error);
-    }
+    document.getElementById("finder").style.fontSize = "100%";
+    document.getElementById("finder").style.width = "15%";
+    document.getElementById("finder").style.margin = "auto";
+    document.getElementById("finder").style.padding = "5px";
+}
