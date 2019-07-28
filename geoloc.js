@@ -28,13 +28,14 @@ function findMe() {
         */
        map.setCenter({lat: latitude, lng: longitude});
        map.setZoom(15);
-       /*
-       new google.maps.Marker({
+
+       var currentLocale = new google.maps.Marker({
         position: {lat: latitude, lng: longitude},
         map: map,
-        title: 'Here'
+        title: 'Here',
+        icon : {url:"http://maps.google.com/mapfiles/kml/pal5/icon6.png"}
       });
-      */
+
        var answer = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude+"," + longitude+ "&radius=2000&type=park&opennow&key=AIzaSyAoArmgrsG6qYabx-0lIWFlLX3HPERCj5I";
        var placeNames = "Nearby parks:";
        //var obj;
