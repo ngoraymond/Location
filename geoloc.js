@@ -85,4 +85,5 @@ function findMe() {
     document.getElementById("finder").style.width = "15%";
     document.getElementById("finder").style.margin = "auto";
     document.getElementById("finder").style.padding = "5px";
+    document.getElementById("map").style.height = "95%";
 }
